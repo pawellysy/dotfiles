@@ -1,6 +1,6 @@
 HOST_NAME=pueblo
 source ~/.nvm/nvm.sh
-nvm use stable
+nvm use 15
 shopt -s autocd
 shopt -s histappend
 
