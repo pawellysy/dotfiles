@@ -21,7 +21,7 @@ bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple
 txtrst='\e[0m'    # Text Reset
 
-emojis=("👾" "🌐" "🎲" "🌍" "🐉" "🌵")
+emojis=("🐁")
 
 EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
@@ -35,8 +35,8 @@ print_before_the_prompt () {
 PROMPT_COMMAND=print_before_the_prompt
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 PS1="$EMOJI >"
-if [ -f ~/.git-completion.bash ]; then
-	. ~/.git-completion.bash
+if [ -f ~/.git-auto-complete.bash ]; then
+	. ~/.git-auto-complete.bash
 fi
 function mkcd()
 {
@@ -47,6 +47,7 @@ function mkcd()
 # Aliases
 # -------
 alias hcd='code ~/dev/blacklabel/highcharts-development/highcharts-workspace.code-workspace'
+alias utils='cd ~/dev/blacklabel/utils && npm start'
 alias a='code .'
 alias c='code .'
 alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
@@ -57,6 +58,7 @@ alias run='npm run'
 alias nis='npm i -S'
 alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
+alias scr="gulp scripts-watch"
 alias o="open ." # Open the current directory in Finder
 
 # ----------------------
@@ -77,6 +79,12 @@ alias gi='git init'
 alias gl='git log'
 alias gp='git pull'
 alias gpsh='git push'
+alias gac='git add . && git commit'
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ----------
+# LOAD git completion
+# ----------
+source ~/.git-completion.bash
