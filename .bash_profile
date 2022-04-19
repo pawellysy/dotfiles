@@ -1,11 +1,10 @@
 HOST_NAME=pueblo
 source ~/.nvm/nvm.sh
-nvm use 15
+nvm use 16
 shopt -s autocd
 shopt -s histappend
 
 export PATH=$PATH:$HOME/bin
-
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 
@@ -75,11 +74,14 @@ alias gaaa='git add -A'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gd='git diff'
-alias gi='git init'
+alias gpo='git pull origin master'
 alias gl='git log'
 alias gp='git pull'
 alias gpsh='git push'
+alias copy='git branch --show-current | pbcopy'
 alias gac='git add . && git commit'
+alias gch='git checkout'
+alias gprev='git checkout @~1'
 alias gss='git status -s'
 alias gs='echo ""; echo "*********************************************"; echo -e "   DO NOT FORGET TO PULL BEFORE COMMITTING"; echo "*********************************************"; echo ""; git status'
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -88,3 +90,4 @@ alias gs='echo ""; echo "*********************************************"; echo -e
 # LOAD git completion
 # ----------
 source ~/.git-completion.bash
+source ~/.bashrc
