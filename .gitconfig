@@ -1,0 +1,31 @@
+# To jest plik konfiguracyjny użytkownika Gita.
+[user]
+	email = pawel.lysy@blacklabel.pl
+	name = Pawel Lysy
+# Dostosuj i odkomentuj poniższe wiersze:
+#	name = Pawel Lysy
+#	email = pawel.lysy@blacklabel.pl
+
+[core]
+	excludesfile = /Users/pueblo/.gitignore_global
+	editor = vi
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+ logp = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+ lgb = log --graph --date-order --branches --first-parent \
+ --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %C(green)(%ad) %C(bold cyan)<%an>%Creset'
+ lga = log --graph --date-order --all \
+ --pretty=format:'%C(auto)%h%Creset %C(auto)%d%Creset %s %C(green)(%ad) %C(bold cyan)<%an>%Creset'
+[merge]
+	tool = kdiff3
+[pull]
+	rebase = false
+[fetch]
+	prune = true
+[diff]
+	tool = meld
